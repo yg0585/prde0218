@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.lib.TestLibraryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-02-18T06:13:07" hostname="DESKTOP-L5M9URE" time="0.044">
+  <properties/>
+  <testcase name="helloworld()" classname="org.example.lib.TestLibraryTest" time="0.044"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,9 @@
+-classpath 'C:\\Users\\yg\\Desktop\\glory\\study\\prde0218\\build\\classes\\java\\main;C:\\Users\\yg\\Desktop\\glory\\study\\prde0218\\build\\resources\\main'
+-d 'C:\\Users\\yg\\Desktop\\glory\\study\\prde0218\\build\\docs\\javadoc'
+-doctitle 'prde0218 1.0-SNAPSHOT API'
+-html5 
+-notimestamp 
+-quiet 
+-windowtitle 'prde0218 1.0-SNAPSHOT API'
+'C:\\Users\\yg\\Desktop\\glory\\study\\prde0218\\src\\main\\java\\org\\example\\lib\\TestLibrary.java'
+'C:\\Users\\yg\\Desktop\\glory\\study\\prde0218\\src\\main\\java\\org\\example\\Main.java'

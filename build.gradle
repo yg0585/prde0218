@@ -1,0 +1,97 @@
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'maven-publish'
+    id 'signing'
+}
+
+group 'io.github.yg0585'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = 'prde0218'
+            from components.java
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
+            pom {
+                name = 'My Library'
+                description = 'A concise description of my library'
+                url = 'http://www.example.com/library'
+                properties = [
+                        myProp: "value",
+                        "prop.with.dots": "anotherValue"
+                ]
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'johnd'
+                        name = 'John Doe'
+                        email = 'john.doe@example.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://example.com/my-library.git'
+                    developerConnection = 'scm:git:ssh://example.com/my-library.git'
+                    url = 'http://example.com/my-library/'
+                }
+            }
+        }
+    }
+//    repositories {
+//        maven {
+//            if (version.endsWith('SNAPSHOT'))  {
+//                url = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+//            }
+//            else {
+//                url = "https://s01.oss.sonatype.org/content/repositories/releases/"
+//            }
+//            credentials {
+//                username = ossrhUsername
+//                password = ossrhPassword
+//            }
+//        }
+//    }
+}
+//
+//signing {
+//    sign publishing.publications.mavenJava
+//}
+
+
+javadoc {
+    if(JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html5', true)
+    }
+}
+
+dependencies {
+    testImplementation 'org.assertj:assertj-core:3.20.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
