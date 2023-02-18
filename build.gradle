@@ -3,6 +3,14 @@ plugins {
     id 'java-library'
     id 'maven-publish'
     id 'signing'
+    id "jacoco"
+    id "org.sonarqube" version "3.5.0.2730"
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+    }
 }
 
 group 'io.github.yg0585'
